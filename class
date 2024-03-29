@@ -1,0 +1,21 @@
+class Stream:
+    def __init__(self):
+        self.study_groups = []
+
+    def add_study_group(self, study_group):
+        self.study_groups.append(study_group)
+
+    def __iter__(self):
+        return iter(self.study_groups)
+
+class StreamComparator:
+    def compare_group_count(self, stream1, stream2):
+        group_count_stream1 = len(stream1.study_groups)
+        group_count_stream2 = len(stream2.study_groups)
+
+        if group_count_stream1 < group_count_stream2:
+            return -1
+        elif group_count_stream1 == group_count_stream2:
+            return 0
+        else:
+            return 1
